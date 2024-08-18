@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>¡Gracias por querer empezar de nuevo!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet"> <!-- Importar la fuente Dancing Script -->
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #b57edc; /* Fondo amatista */
+      font-family: 'Dancing Script', cursive; /* Aplicar la fuente Dancing Script */
+      overflow: hidden; /* Evita barras de desplazamiento debido a elementos flotantes */
+      color: #fff; /* Color de texto blanco */
+    }
+    #container {
+      text-align: center;
+      position: relative;
+      z-index: 1; /* Asegura que el contenido esté sobre los elementos flotantes */
+    }
+    h1 {
+      font-size: 36px;
+      margin: 10px 0;
+    }
+    p {
+      font-size: 20px;
+      max-width: 500px;
+      margin: 0 auto 30px;
+    }
+    #media-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px; /* Espacio entre la imagen y el video */
+      margin: 30px 0; /* Añade margen superior e inferior para el contenido */
+    }
+    img {
+      width: 450px; /* Ajusta el ancho máximo de la imagen */
+      height: auto; /* Mantiene la proporción de la imagen */
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    /* Estilos y animación para corazones flotantes */
+    .floating-heart {
+      position: absolute;
+      font-size: 30px; /* Tamaño de los corazones flotantes */
+      color: #fff; /* Color de los corazones */
+      animation: float-heart 10s infinite;
+    }
+
+    /* Animación de flotación para corazones */
+    @keyframes float-heart {
+      0% {
+        transform: translateY(0) rotate(0);
+      }
+      50% {
+        transform: translateY(-100px) rotate(360deg);
+      }
+      100% {
+        transform: translateY(0) rotate(0);
+      }
+    }
+
+    /* Posiciones aleatorias para los corazones flotantes */
+    .floating-heart:nth-child(1) { top: 10%; left: 5%; animation-duration: 8s; }
+    .floating-heart:nth-child(2) { top: 20%; left: 25%; animation-duration: 10s; }
+    .floating-heart:nth-child(3) { top: 30%; left: 45%; animation-duration: 12s; }
+    .floating-heart:nth-child(4) { top: 40%; left: 65%; animation-duration: 14s; }
+    .floating-heart:nth-child(5) { top: 50%; left: 85%; animation-duration: 16s; }
+    .floating-heart:nth-child(6) { top: 60%; left: 15%; animation-duration: 18s; }
+    .floating-heart:nth-child(7) { top: 70%; left: 35%; animation-duration: 20s; }
+    .floating-heart:nth-child(8) { top: 80%; left: 55%; animation-duration: 22s; }
+    .floating-heart:nth-child(9) { top: 90%; left: 75%; animation-duration: 24s; }
+    
+    /* Estilos y animación para estrellas flotantes */
+    .floating-star {
+      position: absolute;
+      font-size: 25px; /* Tamaño de las estrellas flotantes */
+      color: #fff; /* Color de las estrellas */
+      animation: float-star 15s infinite;
+    }
+
+    /* Animación de flotación para estrellas */
+    @keyframes float-star {
+      0% {
+        transform: translateY(0) rotate(0);
+      }
+      50% {
+        transform: translateY(-120px) rotate(360deg);
+      }
+      100% {
+        transform: translateY(0) rotate(0);
+      }
+    }
+
+    /* Posiciones aleatorias para las estrellas flotantes */
+    .floating-star:nth-child(10) { top: 5%; left: 10%; animation-duration: 12s; }
+    .floating-star:nth-child(11) { top: 15%; left: 30%; animation-duration: 14s; }
+    .floating-star:nth-child(12) { top: 25%; left: 50%; animation-duration: 16s; }
+    .floating-star:nth-child(13) { top: 35%; left: 70%; animation-duration: 18s; }
+    .floating-star:nth-child(14) { top: 45%; left: 20%; animation-duration: 20s; }
+    .floating-star:nth-child(15) { top: 55%; left: 40%; animation-duration: 22s; }
+    .floating-star:nth-child(16) { top: 65%; left: 60%; animation-duration: 24s; }
+    .floating-star:nth-child(17) { top: 75%; left: 80%; animation-duration: 26s; }
+    .floating-star:nth-child(18) { top: 20%; left: 80%; animation-duration: 28s; }
+    .floating-star:nth-child(19) { top: 30%; left: 40%; animation-duration: 30s; }
+    .floating-star:nth-child(20) { top: 40%; left: 60%; animation-duration: 32s; }
+    #play-button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 18px;
+      color: #fff;
+      background-color: #4CAF50;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    #play-button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <h1>¡Gracias por aceptar querer empezar de nuevo!</h1>
+    <p>Quiero que sepas que eres una persona muy especial para mí y estoy feliz de que podamos arreglar la relación que llevamos teniendo. Sé que no se podrá olvidar en un instante, pero quiero que sepas...</p>
+    <h1>que me hace muy feliz que podamos empezar de nuevo. Te amo, Anaaaa.</h1>
+    <div id="media-container">
+      <img src="../imagenes/295275b1-0462-484b-abdc-d3693b192a51.jfif" alt="Pareja feliz">
+    </div>
+    <button id="play-button">Reproducir Audio</button>
+  </div>
+
+  <!-- Audio de fondo -->
+  <audio id="background-audio" src="../audio/COMENZAR DE NUEVO - Jhovan Tomasevich Lyrics.mp3" autoplay loop></audio>
+
+  <!-- Corazones flotantes -->
+  <div class="floating-heart">&#10084;</div>
+  <div class="floating-heart">&#10084;</div>
+  <div class="floating-heart">&#10084;</div>
+  <div class="floating-heart">&#10084;</div>
+  <div class="floating-heart">&#10084;</div>
+  <div class="floating-heart">&#10084;</div>
+  <div class="floating-heart">&#10084;</div>
+  <div class="floating-heart">&#10084;</div>
+  <div class="floating-heart">&#10084;</div>
+
+  <!-- Estrellas flotantes -->
+  <div class="floating-star">&#9733;</div>
+  <div class="floating-star">&#9733;</div>
+  <div class="floating-star">&#9733;</div>
+  <div class="floating-star">&#9733;</div>
+  <div class="floating-star">&#9733;</div>
+  <div class="floating-star">&#9733;</div>
+  <div class="floating-star">&#9733;</div>
+  <div class="floating-star">&#9733;</div>
+  <div class="floating-star">&#9733;</div>
+  <div class="floating-star">&#9733;</div>
+
+  <script>
+    document.getElementById('play-button').addEventListener('click', function() {
+      var audio = document.getElementById('background-audio');
+      if (audio.paused) {
+        audio.play();
+        this.textContent = 'Pausar Audio'; // Cambia el texto del botón cuando se reproduce
+      } else {
+        audio.pause();
+        this.textContent = 'Reproducir Audio'; // Cambia el texto del botón cuando está en pausa
+      }
+    });
+  </script>
+</body>
+</html>
+

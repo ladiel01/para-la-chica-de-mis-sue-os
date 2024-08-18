@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>¿Quieres empezar de nuevo?</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #E0115F; /* Fondo color ruby */
+      font-family: Arial, sans-serif;
+      overflow: hidden; /* Evita barras de desplazamiento debido a elementos flotantes */
+      position: relative; /* Necesario para posicionar los elementos flotantes */
+    }
+    #container {
+      text-align: center;
+      z-index: 1; /* Asegura que el contenido esté encima de los elementos flotantes */
+    }
+    h1 {
+      font-size: 32px;
+      color: #fff; /* Color de texto blanco */
+    }
+    #buttons {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 18px;
+      color: #fff;
+      background-color: #4CAF50;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    #btnNo {
+      background-color: #f44336;
+    }
+    #btnNo:hover {
+      background-color: #d32f2f;
+    }
+    img {
+      margin-top: 30px;
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Estilos y animación para corazones flotantes */
+    .floating-heart {
+      position: absolute;
+      font-size: 25px; /* Tamaño de los corazones flotantes */
+      color: #fff; /* Color de los corazones */
+      animation: float 10s infinite;
+    }
+
+    /* Animación de flotación para corazones */
+    @keyframes float {
+      0% {
+        transform: translateY(0) rotate(0);
+      }
+      50% {
+        transform: translateY(-100px) rotate(360deg);
+      }
+      100% {
+        transform: translateY(0) rotate(0);
+      }
+    }
+
+    /* Posiciones aleatorias para los corazones flotantes */
+    .floating-heart:nth-child(1) { top: 10%; left: 10%; animation-duration: 8s; }
+    .floating-heart:nth-child(2) { top: 20%; left: 30%; animation-duration: 10s; }
+    .floating-heart:nth-child(3) { top: 30%; left: 50%; animation-duration: 12s; }
+    .floating-heart:nth-child(4) { top: 40%; left: 70%; animation-duration: 14s; }
+    .floating-heart:nth-child(5) { top: 50%; left: 20%; animation-duration: 16s; }
+    .floating-heart:nth-child(6) { top: 60%; left: 40%; animation-duration: 18s; }
+    .floating-heart:nth-child(7) { top: 70%; left: 60%; animation-duration: 20s; }
+    .floating-heart:nth-child(8) { top: 80%; left: 80%; animation-duration: 22s; }
+
+    /* Estilos y animación para estrellas flotantes */
+    .floating-star {
+      position: absolute;
+      font-size: 20px; /* Tamaño de las estrellas flotantes */
+      color: #fff; /* Color de las estrellas */
+      animation: float-star 15s infinite;
+    }
+
+    /* Animación de flotación para estrellas */
+    @keyframes float-star {
+      0% {
+        transform: translateY(0) rotate(0);
+      }
+      50% {
+        transform: translateY(-120px) rotate(360deg);
+      }
+      100% {
+        transform: translateY(0) rotate(0);
+      }
+    }
+
+    /* Posiciones aleatorias para las estrellas flotantes */
+    .floating-star:nth-child(1) { top: 5%; left: 10%; animation-duration: 12s; }
+    .floating-star:nth-child(2) { top: 15%; left: 30%; animation-duration: 14s; }
+    .floating-star:nth-child(3) { top: 25%; left: 50%; animation-duration: 16s; }
+    .floating-star:nth-child(4) { top: 35%; left: 70%; animation-duration: 18s; }
+    .floating-star:nth-child(5) { top: 45%; left: 20%; animation-duration: 20s; }
+    .floating-star:nth-child(6) { top: 55%; left: 40%; animation-duration: 22s; }
+    .floating-star:nth-child(7) { top: 65%; left: 60%; animation-duration: 24s; }
+    .floating-star:nth-child(8) { top: 75%; left: 80%; animation-duration: 26s; }
+    .floating-star:nth-child(9) { top: 20%; left: 80%; animation-duration: 28s; }
+    .floating-star:nth-child(10) { top: 30%; left: 40%; animation-duration: 30s; }
+  </style>
+  <script>
+    function accionParaCuandoEllaDigaQueSi() {
+      const respuesta = confirm("¿Estás segura que quieres empezar de nuevo♡? Ponte audífonos si dices que ♡sí♡");
+      if (respuesta) {
+        // Redireccionar a la nueva página si responde "Sí"
+        window.location.href = "opcionsi.html";
+      } else {
+        alert("Espero que puedas reconsiderarlo 😊");
+      }
+    }
+
+    function mueveElBoton() {
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+
+      const newWidth = Math.random() * width;
+      const newHeight = Math.random() * height;
+
+      const btnNo = document.getElementById("btnNo");
+      btnNo.style.position = "absolute";
+      btnNo.style.left = newWidth + "px";
+      btnNo.style.top = newHeight + "px";
+    }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <h2>Sé que fui un completo idiota al no pensar en lo que escribí</h2>
+    <h3>Por eso te pido una segunda oportunidad porque</h3>
+    <h1>No quiero dejarte ir, lo eres todo para mí, yo sé lo que siento</h1>
+    <h1>Y siento que te quiero tener a mi lado, porque no valgo nada sin ti, por eso te pregunto</h1>
+    <h1>¿Quieres empezar de nuevo?</h1>
+      
+    <div id="buttons">
+      <button onclick="accionParaCuandoEllaDigaQueSi()" id="btnSi">Sí</button>
+      <button id="btnNo" onmouseover="mueveElBoton()">No</button>
+    </div>
+    
+
+  <!-- Corazones flotantes -->
+  <div class="floating-heart">&#10084;</div>
+  <div class="floating-heart">&#10084;</div>
+  <div class="floating-heart">&#10084;</div>
+  <div class="floating-heart">&#10084;</div>
+  <div class="floating-heart">&#10084;</div>
+  <div class="floating-heart">&#10084;</div>
+  <div class="floating-heart">&#10084;</div>
+  <div class="floating-heart">&#10084;</div>
+
+  <!-- Estrellas flotantes -->
+  <div class="floating-star">&#9733;</div>
+  <div class="floating-star">&#9733;</div>
+  <div class="floating-star">&#9733;</div>
+  <div class="floating-star">&#9733;</div>
+  <div class="floating-star">&#9733;</div>
+  <div class="floating-star">&#9733;</div>
+  <div class="floating-star">&#9733;</div>
+  <div class="floating-star">&#9733;</div>
+  <div class="floating-star">&#9733;</div>
+  <div class="floating-star">&#9733;</div>
+</body>
+</html>

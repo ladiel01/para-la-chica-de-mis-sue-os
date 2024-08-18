@@ -1,0 +1,174 @@
+/* Estilos para el cuerpo del documento */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #E0115F; /* Fondo rojo ruby */
+    font-family: Arial, sans-serif;
+    overflow: hidden; /* Evita barras de desplazamiento debido a los corazones flotantes */
+}
+
+/* Estilos para el contenedor principal */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh; /* Altura de la ventana del navegador */
+}
+
+/* Estilos para los asides */
+aside {
+    width: 10%; /* Ajusta el ancho de los asides */
+    background-color: #C8102E; /* Color para los asides */
+    position: relative; /* Necesario para posicionar la flor */
+}
+
+.sidebar-left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.sidebar-right {
+    /* Puedes añadir más estilos si es necesario */
+}
+
+/* Estilos para el contenido principal */
+.main-content {
+    flex: 1;
+    text-align: center;
+    position: relative; /* Necesario para posicionar los corazones flotantes */
+    color: #fff;
+}
+
+/* Estilos para el corazón principal */
+.heart {
+    font-size: 150px; /* Tamaño grande del corazón */
+    margin-bottom: 20px;
+}
+
+/* Estilos para el texto */
+.text {
+    font-size: 40px; /* Tamaño del texto */
+    font-weight: bold;
+    margin-bottom: 20px; /* Espacio entre el texto y el botón */
+}
+.mensaje {
+    font-size: 20px; /* Tamaño del texto del botón */
+    padding: 10px 20px; /* Espaciado interno del botón */
+    border: none;
+    border-radius: 5px;
+    background-color: #fff; /* Color de fondo del botón */
+    color: #E0115F; /* Color del texto del botón, que coincide con el fondo */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    margin-top: 20px; /* Espacio entre el texto y el botón */
+    transition: background-color 0.3s, color 0.3s; /* Transiciones suaves para el hover */
+}
+
+.mensaje:hover {
+    background-color: #E0115F; /* Fondo del botón al pasar el ratón */
+    color: #fff; /* Color del texto del botón al pasar el ratón */
+}
+
+
+/* Estilos para el botón de cumpleaños */
+.birthday-button {
+    font-size: 20px; /* Tamaño del texto del botón */
+    padding: 10px 20px; /* Espaciado interno del botón */
+    border: none;
+    border-radius: 5px;
+    background-color: #fff; /* Color de fondo del botón */
+    color: #E0115F; /* Color del texto del botón, que coincide con el fondo */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    margin-top: 20px; /* Espacio entre el texto y el botón */
+    transition: background-color 0.3s, color 0.3s; /* Transiciones suaves para el hover */
+}
+
+.birthday-button:hover {
+    background-color: #E0115F; /* Fondo del botón al pasar el ratón */
+    color: #fff; /* Color del texto del botón al pasar el ratón */
+}
+/* Estilos para el botón de cumpleaños */
+.empezar-de-nuevo {
+    font-size: 20px; /* Tamaño del texto del botón */
+    padding: 10px 20px; /* Espaciado interno del botón */
+    border: none;
+    border-radius: 5px;
+    background-color: #fff; /* Color de fondo del botón */
+    color: #E0115F; /* Color del texto del botón, que coincide con el fondo */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    margin-top: 20px; /* Espacio entre el texto y el botón */
+    transition: background-color 0.3s, color 0.3s; /* Transiciones suaves para el hover */
+}
+
+.empezar-de-nuevo:hover {
+    background-color: #E0115F; /* Fondo del botón al pasar el ratón */
+    color: #fff; /* Color del texto del botón al pasar el ratón */
+}
+
+/* Estilos y animación para los corazones flotantes */
+.floating-heart {
+    position: absolute;
+    font-size: 30px; /* Tamaño de los corazones flotantes */
+    color: #fff;
+    animation: float 10s infinite;
+}
+
+/* Animación de flotación */
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0);
+    }
+    50% {
+        transform: translateY(-100px) rotate(360deg);
+    }
+    100% {
+        transform: translateY(0) rotate(0);
+    }
+}
+
+/* Posiciones aleatorias para los corazones flotantes */
+.floating-heart:nth-child(4) { top: 10%; left: 10%; animation-duration: 8s; }
+.floating-heart:nth-child(5) { top: 20%; left: 30%; animation-duration: 10s; }
+.floating-heart:nth-child(6) { top: 30%; left: 50%; animation-duration: 12s; }
+.floating-heart:nth-child(7) { top: 40%; left: 70%; animation-duration: 14s; }
+.floating-heart:nth-child(8) { top: 50%; left: 20%; animation-duration: 16s; }
+.floating-heart:nth-child(9) { top: 60%; left: 40%; animation-duration: 18s; }
+.floating-heart:nth-child(10) { top: 70%; left: 60%; animation-duration: 20s; }
+.floating-heart:nth-child(11) { top: 80%; left: 30%; animation-duration: 22s; }
+.floating-heart:nth-child(12) { top: 20%; left: 80%; animation-duration: 24s; }
+.floating-heart:nth-child(13) { top: 50%; left: 80%; animation-duration: 26s; }
+.floating-heart:nth-child(14) { top: 40%; left: 10%; animation-duration: 28s; }
+.floating-heart:nth-child(15) { top: 60%; left: 10%; animation-duration: 30s; }
+/* Estilos y animación para las estrellas flotantes */
+.floating-star {
+    position: absolute;
+    font-size: 20px; /* Tamaño de las estrellas flotantes */
+    color: #fff; /* Color de las estrellas */
+    animation: float-star 15s infinite;
+}
+
+/* Animación de flotación para estrellas */
+@keyframes float-star {
+    0% {
+        transform: translateY(0) rotate(0);
+    }
+    50% {
+        transform: translateY(-120px) rotate(360deg);
+    }
+    100% {
+        transform: translateY(0) rotate(0);
+    }
+}
+
+/* Posiciones aleatorias para las estrellas flotantes */
+.floating-star:nth-child(1) { top: 5%; left: 10%; animation-duration: 12s; }
+.floating-star:nth-child(2) { top: 15%; left: 30%; animation-duration: 14s; }
+.floating-star:nth-child(3) { top: 25%; left: 50%; animation-duration: 16s; }
+.floating-star:nth-child(4) { top: 35%; left: 70%; animation-duration: 18s; }
+.floating-star:nth-child(5) { top: 45%; left: 20%; animation-duration: 20s; }
+.floating-star:nth-child(6) { top: 55%; left: 40%; animation-duration: 22s; }
+.floating-star:nth-child(7) { top: 65%; left: 60%; animation-duration: 24s; }
+.floating-star:nth-child(8) { top: 75%; left: 80%; animation-duration: 26s; }
+.floating-star:nth-child(9) { top: 20%; left: 80%; animation-duration: 28s; }
+.floating-star:nth-child(10) { top: 30%; left: 40%; animation-duration: 30s; }

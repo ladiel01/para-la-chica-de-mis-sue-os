@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos para el cuerpo del documento */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Dancing Script', cursive; /* Cambia la fuente a Dancing Script */
+            background: linear-gradient(to bottom, #2c3e50, #34495e); /* Fondo degradado que resalta tristeza */
+            background-size: cover; /* Cubre todo el fondo */
+            overflow: auto; /* Permite el desplazamiento en ambas direcciones */
+            height: 200vh; /* Altura mayor a la ventana del navegador para permitir el desplazamiento vertical */
+            width: 200vw; /* Ancho mayor a la ventana del navegador para permitir el desplazamiento horizontal */
+            text-align: center;
+            color: #fff; /* Color del texto */
+        }
+
+        /* Estilos para el contenedor del texto */
+        .container {
+            max-width: 90%; /* Aumenta el ancho máximo para mejor ajuste en pantallas pequeñas */
+            margin: 0 auto; /* Centra el contenedor horizontalmente */
+            background: rgba(0, 0, 0, 0.7); /* Fondo oscuro semi-transparente para mejorar la legibilidad del texto */
+            padding: 20px; /* Espaciado interno */
+            border-radius: 10px; /* Bordes redondeados */
+            display: inline-block; /* Permite que el contenedor se ajuste al contenido */
+        }
+
+        /* Estilos para el texto */
+        h1 {
+            font-size: 20px; /* Tamaño de fuente más pequeño para pantallas pequeñas */
+            margin: 0;
+            padding: 0;
+            line-height: 1.5; /* Espaciado entre líneas para mejorar la legibilidad */
+        }
+
+        /* Estilos para separar los bloques de texto */
+        .top-text {
+            margin-top: 20px;
+        }
+
+        .bottom-text {
+            margin-bottom: 20px;
+        }
+
+        /* Estilos para la imagen */
+        .image-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0; /* Espaciado superior e inferior */
+        }
+
+        .image-container img {
+            max-width: 90%; /* Ajusta el tamaño de la imagen al contenedor */
+            height: auto; /* Mantiene la proporción de la imagen */
+            border-radius: 10px; /* Bordes redondeados de la imagen */
+            opacity: 0.7; /* Hace que la imagen sea un poco transparente */
+        }
+
+        /* Estilos para los copos de nieve */
+        .snowflakes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200vw; /* Ancho mayor para cubrir más área */
+            height: 200vh; /* Altura mayor para cubrir más área */
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .snowflake {
+            position: absolute;
+            top: -10%;
+            width: 8px;
+            height: 8px;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh);
+            }
+        }
+
+        /* Consultas de medios para pantallas pequeñas */
+        @media (max-width: 600px) {
+            body {
+                height: 100vh; /* Ajusta la altura para pantallas más pequeñas */
+                width: 100vw; /* Ajusta el ancho para pantallas más pequeñas */
+            }
+
+            .container {
+                max-width: 95%; /* Ajusta el ancho máximo del contenedor */
+                padding: 10px; /* Ajusta el espaciado interno */
+            }
+
+            h1 {
+                font-size: 16px; /* Tamaño de fuente más pequeño en pantallas pequeñas */
+            }
+
+            .image-container img {
+                max-width: 100%; /* Ajusta el tamaño de la imagen al contenedor */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Contenedor de copos de nieve -->
+    <div class="snowflakes"></div>
+
+    <div class="container top-text">
+        <h1>Perdóname si has tenido que soportar mi actitud de mierda. Se que te he dicho algo que te hizo sentir mal, no lo negare, soy culpable de lo que me esta pasando lo se , tu solo eres una victima de mi idiotes , pero quiero que sepas que fue un error , en las relaciones siempre los hay, aveces unos sin solucion, quiero que no lleguemos a ese punto con todo esto digo que eres lo mas importante para mi , no quiero que te alejes de mi por una equivocacion , por un error de mi parte, quiero que lo solucionemos, no dejes que esto acabe aqui, porfavor ,
+        perdóname si no he sido la mejor versión de mí contigo, se que te he hecho sentir insuficiente, se que no soy alguien perfecto para ti. Pero en realidad, no quiero que te vayas, la forma en la que actuo aveces, no es la adecuada, pero quiero que sepas que no se hacer nada sin ti, lo eres todo para mi princesa.</h1>
+    </div>
+
+    <div class="image-container">
+        <img src="../imagenes/Me perdonas _.jfif" alt="Imagen significativa">
+    </div>
+
+    <div class="container bottom-text">
+        <h1>Mi corazón sufre de agonia, el hecho de pensar que no podre estar contigo me impide razonar, soy prisionero de la relación que llevamos teniendo, estas dentro de mi, que puedo hacer, hare todo lo que me pidas</h1>
+    </div>
+
+    <script>
+        // Número de copos de nieve
+        const numSnowflakes = 30; // Reduce el número de copos de nieve
+
+        // Función para crear copos de nieve
+        function createSnowflakes() {
+            const snowflakesContainer = document.querySelector('.snowflakes');
+            for (let i = 0; i < numSnowflakes; i++) {
+                const snowflake = document.createElement('div');
+                snowflake.className = 'snowflake';
+                snowflake.style.left = `${Math.random() * 200}vw`; // Ajusta la posición horizontal de los copos
+                snowflake.style.top = `${Math.random() * 200}vh`; // Ajusta la posición vertical de los copos
+                snowflake.style.width = `${Math.random() * 8 + 4}px`;
+                snowflake.style.height = snowflake.style.width;
+                snowflake.style.animationDuration = `${Math.random() * 10 + 10}s`; // Aumenta la duración de la animación
+                snowflake.style.animationDelay = `${Math.random() * 10}s`; // Ajusta el retraso de la animación
+                snowflakesContainer.appendChild(snowflake);
+            }
+        }
+
+        // Llama a la función para crear los copos de nieve
+        createSnowflakes();
+    </script>
+</body>
+</html>
