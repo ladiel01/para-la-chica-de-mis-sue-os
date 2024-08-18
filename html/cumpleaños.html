@@ -6,58 +6,116 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/flores.css">
     <link rel="icon" href="img/flowers.png" type="image/x-icon">
-    <script src="../js/flores.js" defer></script>
     <title>Feliz Cumpleaños</title>
     <style>
-        body {
-            margin: 0;
+        *,
+        *::after,
+        *::before {
             padding: 0;
-            font-family: Arial, sans-serif; /* Cambia la fuente a Arial */
-            background-color: #f9f3f4; /* Color de fondo suave */
-            color: #333; /* Color de texto oscuro para contraste */
-            overflow: hidden; /* Evitar barras de desplazamiento */
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --dark-color: #000;
+        }
+
+        body {
             display: flex;
+            align-items: flex-end;
             justify-content: center;
-            align-items: center;
-            height: 100vh; /* Altura completa de la ventana del navegador */
-            text-align: center;
+            min-height: 100vh;
+            background-color: var(--dark-color);
+            overflow: hidden;
+            perspective: 1000px;
         }
-        .container {
+
+        .night {
+            position: fixed;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 100%;
+            filter: blur(0.1vmin);
+            background-image: radial-gradient(ellipse at top, transparent 0%, var(--dark-color)),
+                              radial-gradient(ellipse at bottom, var(--dark-color), rgba(145, 233, 255, 0.2)),
+                              repeating-linear-gradient(220deg, rgb(0, 0, 0) 0px, rgb(0, 0, 0) 19px, transparent 19px, transparent 22px),
+                              repeating-linear-gradient(189deg, rgb(0, 0, 0) 0px, rgb(0, 0, 0) 19px, transparent 19px, transparent 22px),
+                              repeating-linear-gradient(148deg, rgb(0, 0, 0) 0px, rgb(0, 0, 0) 19px, transparent 19px, transparent 22px),
+                              linear-gradient(90deg, rgb(7, 107, 42), rgb(240, 240, 240));
+        }
+
+        .flowers {
             position: relative;
-            text-align: center;
+            transform: scale(0.9);
+            z-index: 1; /* Asegura que las flores están debajo del mensaje */
         }
+
+        .flower {
+            position: absolute;
+            bottom: 10vmin;
+            transform-origin: bottom center;
+            z-index: 10;
+            --fl-speed: 0.3s;
+        }
+
+        .flower--1 {
+            -webkit-animation: moving-flower-1 4s linear infinite;
+                    animation: moving-flower-1 4s linear infinite;
+        }
+
+        .flower--1 .flower__line {
+            height: 70vmin;
+            -webkit-animation-delay: 0.3s;
+                    animation-delay: 0.3s;
+        }
+
+        .flower--1 .flower__line__leaf--1 {
+            -webkit-animation: blooming-leaf-right var(--fl-speed) 1.6s backwards;
+                    animation: blooming-leaf-right var(--fl-speed) 1.6s backwards;
+        }
+
+        .flower--1 .flower__line__leaf--2 {
+            -webkit-animation: blooming-leaf-right var(--fl-speed) 1.4s backwards;
+                    animation: blooming-leaf-right var(--fl-speed) 1.4s backwards;
+        }
+
+        .flower--1 .flower__line__leaf--3 {
+            -webkit-animation: blooming-leaf-left var(--fl-speed) 1.2s backwards;
+                    animation: blooming-leaf-left var(--fl-speed) 1.2s backwards;
+        }
+
         .birthday-message {
+            font-family: Arial, sans-serif; /* Cambia la fuente a Arial */
             font-size: 36px;
-            color: #d94f70; /* Color de texto para el mensaje */
+            color: #d94f70; /* Color del texto del mensaje */
             z-index: 2;
+            position: relative;
         }
+
         .heart {
             font-size: 48px;
             color: #ff0066; /* Color del corazón */
             z-index: 2;
             margin-top: 20px; /* Espacio superior para separar del mensaje */
-        }
-        .flower-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: url('path/to/your/flower-image.png'); /* Ruta a la imagen de flores */
-            background-size: cover;
-            background-position: center;
-            z-index: 1; /* Coloca las flores en el fondo */
+            position: relative;
         }
     </style>
 </head>
 <body>
+    <div class="night"></div>
+    <div class="flowers">
+        <!-- Aquí agregarás las flores utilizando el CSS proporcionado -->
+        <div class="flower flower--1">
+            <!-- Añadir contenido de la flor si es necesario -->
+        </div>
+        <!-- Puedes añadir más flores aquí -->
+    </div>
     <div class="container">
-        <div class="flower-container"></div> <!-- Contenedor para las flores -->
         <!-- Mensaje de cumpleaños y corazón -->
         <div class="birthday-message">Feliz Cumpleaños mi vida, te quiero mucho</div>
         <div class="heart">&#10084;</div>
     </div>
-
-    <script src="main.js" defer></script>
 </body>
 </html>
