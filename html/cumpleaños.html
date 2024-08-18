@@ -7,66 +7,55 @@
     <link rel="stylesheet" href="../css/flores.css">
     <link rel="icon" href="img/flowers.png" type="image/x-icon">
     <script src="../js/flores.js" defer></script>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet"> <!-- Fuente decorativa -->
     <title>Feliz Cumpleaños</title>
     <style>
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Dancing Script', cursive; /* Aplicar la fuente Dancing Script */
+            font-family: Arial, sans-serif; /* Cambia la fuente a Arial */
             background-color: #f9f3f4; /* Color de fondo suave */
             color: #333; /* Color de texto oscuro para contraste */
             overflow: hidden; /* Evitar barras de desplazamiento */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Altura completa de la ventana del navegador */
+            text-align: center;
         }
         .container {
             position: relative;
-            overflow: hidden;
             text-align: center;
         }
         .birthday-message {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
             font-size: 36px;
             color: #d94f70; /* Color de texto para el mensaje */
             z-index: 2;
-            animation: fadeIn 2s ease-in-out;
         }
         .heart {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
             font-size: 48px;
             color: #ff0066; /* Color del corazón */
             z-index: 2;
-            animation: pulse 1.5s infinite;
+            margin-top: 20px; /* Espacio superior para separar del mensaje */
         }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.2); }
-            100% { transform: scale(1); }
+        .flower-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('path/to/your/flower-image.png'); /* Ruta a la imagen de flores */
+            background-size: cover;
+            background-position: center;
+            z-index: 1; /* Coloca las flores en el fondo */
         }
     </style>
 </head>
-<body class="container">
-    <div class="night"></div>
-    <!-- Aquí irían las flores y otros elementos -->
-
-    <!-- Mensaje de cumpleaños y corazón -->
-    <div class="message-container">
+<body>
+    <div class="container">
+        <div class="flower-container"></div> <!-- Contenedor para las flores -->
+        <!-- Mensaje de cumpleaños y corazón -->
         <div class="birthday-message">Feliz Cumpleaños mi vida, te quiero mucho</div>
         <div class="heart">&#10084;</div>
-    </div>
-
-    <!-- Aquí va el resto de tu contenido, por ejemplo, las flores y otros elementos -->
-    <div class="flower-container">
-        <!-- Flores y otros elementos aquí -->
     </div>
 
     <script src="main.js" defer></script>
